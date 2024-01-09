@@ -8,9 +8,9 @@ public class ProgrammeMain {
 
 	public static void main(String[] args) {		
 		ArrayList <Pizza> pizzaList = Controllers.listePizza();
+		System.out.println("\n*************LISTE DES PIZZAS AVEC PRIX + INGREDIENTS********");
 		for (Pizza pizza : pizzaList) {
-			ArrayList<Ingredient> ingredientList = Controllers.getIngredientListByNoPizz(pizza.getNroPizza());
-			Controllers.afficher(pizza, ingredientList);
+			Controllers.afficher(pizza);
 		}
 	}// fin de la fonction main
 

@@ -45,10 +45,11 @@ public class Controllers {
 					rs.getString(1);
 					rs.getString(2);
 					rs.getString(3);
+					//rs.getString(4);
 
-					Pizza p1 = new Pizza(rs.getString(1), rs.getString(2), rs.getString(3));
+					Pizza p1 = new Pizza(rs.getString(1), rs.getString(2), rs.getString(3),getIngredientListByNoPizz("1"));
 					pizzaList.add(p1);
-	               // System.out.println(p1);
+	               System.out.println(p1);
 				}// fin de la boucle de la copie de la table pizza
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -90,11 +91,8 @@ public class Controllers {
 			return ingredientList;
 
 		}
-		public static void afficher(Pizza pizza, ArrayList<Ingredient> ingredients) {
-			System.out.println("\n*************LISTE DES PIZZAS AVEC PRIX + INGREDIENTS********");
+		public static void afficher(Pizza pizza) {
+		
 		    System.out.println(pizza.toString());
-            for (Ingredient ingredient : ingredients) {
-                    System.out.println(ingredient.toString());
-                }
-            }
+		}        
 }
